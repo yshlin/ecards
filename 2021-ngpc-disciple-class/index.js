@@ -2,13 +2,15 @@ $(() => {
     const whoosh = new Audio('sound/whoosh.mp3');
     const bell = new Audio('sound/bell.mp3');
     let $ty = $('#thankyou');
+    let $gifts = $('.gift');
     $ty.on('click', e => {
         $(e.target).addClass('clicked');
+        $gifts.addClass('clicked');
         bell.play();
     }).on('animationend', e => {
         $(e.target).removeClass('clicked');
+        $gifts.removeClass('clicked');
     });
-    let $gifts = $('.gift');
     $gifts.on('mouseenter', e => {
         let $gift = $(e.target);
         $gift.addClass('open' + (Math.floor(Math.random() * 2) === 1 ? 'r' : 'l'));
