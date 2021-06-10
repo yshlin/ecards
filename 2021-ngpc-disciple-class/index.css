@@ -10,6 +10,7 @@ body {
   left: 50%;
   margin-top: -100px;
   margin-left: -150px;
+  cursor: pointer;
 }
 .clicked {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -301,15 +302,6 @@ body {
     position: relative;
     margin-top: 0;
   }
-  .card {
-    position: absolute;
-  }
-  .tp {
-    position: absolute;
-  }
-  .bt {
-    position: absolute;
-  }
   .gift01,
   .gift02,
   .gift03,
@@ -324,11 +316,32 @@ body {
     left: 50%;
   }
   .card-open {
-    opacity: 1;
     width: 300px;
     height: 300px;
     margin-top: -150px;
     margin-left: -150px;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  .card-open {
+    width: 960px;
+    height: 960px;
+    margin-top: -480px;
+    margin-left: -480px;
+  }
+  .gift {
+    margin-top: -200px;
+    margin-left: -200px;
+    width: 400px;
+    height: 400px;
+  }
+  .tp {
+    width: 400px;
+    height: 400px;
+  }
+  .bt {
+    width: 400px;
+    height: 400px;
   }
 }
 /*# sourceMappingURL=index.css.map */

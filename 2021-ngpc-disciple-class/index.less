@@ -11,6 +11,7 @@ body {
   left: 50%;;
   margin-top: -100px;
   margin-left: -150px;
+  cursor: pointer;
 }
 
 .clicked {
@@ -350,30 +351,38 @@ body {
     margin-top: 0;
   }
 
-  .card {
-    position: absolute;
-  }
-
-  .tp {
-    position: absolute;
-    //top: 0;
-  }
-
-  .bt {
-    position: absolute;
-    //top: -100%;
-  }
-
   .gift01, .gift02, .gift03, .gift04, .gift05, .gift06, .gift07, .gift08, .gift09, .gift10 {
     top: auto;
     left: 50%;
   }
 
   .card-open {
-    opacity: 1;
     width: 300px;
     height: 300px;
     margin-top: -150px;
     margin-left: -150px;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .card-open {
+    width: 960px;
+    height: 960px;
+    margin-top: -480px;
+    margin-left: -480px;
+  }
+  .gift {
+    margin-top: -200px;
+    margin-left: -200px;
+    width: 400px;
+    height: 400px;
+  }
+  .tp {
+    width: 400px;
+    height: 400px;
+  }
+  .bt {
+    width: 400px;
+    height: 400px;
   }
 }
