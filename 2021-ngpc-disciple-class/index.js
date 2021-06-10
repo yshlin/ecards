@@ -1,0 +1,29 @@
+$(() => {
+    const whoosh = new Audio('sound/whoosh.mp3');
+    const bell = new Audio('sound/bell.mp3');
+    let $ty = $('#thankyou');
+    $ty.on('click', e => {
+        $(e.target).addClass('clicked');
+        bell.play();
+    }).on('animationend', e => {
+        $(e.target).removeClass('clicked');
+    });
+    let o = $ty.offset();
+    let $gifts = $('.gift');
+    $gifts.on('mouseenter', e => {
+        let $gift = $(e.target);
+        let o2 = $gift.offset();
+        $gift.addClass('open' + (Math.floor(Math.random() * 2) === 1 ? 'r' : 'l'));
+        let mq = window.matchMedia("(max-width: 768px)");
+        if (!mq.matches) {
+            $gift.find('.card').attr('style', `top: ${o.top - o2.top + 100}px; left: ${o.left - o2.left + 150}px;`);
+        }
+        whoosh.play();
+    }).on('mouseleave', e => {
+        let $gift = $(e.target);
+        $gift.removeClass('openl');
+        $gift.removeClass('openr');
+        $gift.find('.card').attr('style', '');
+    });
+
+});
