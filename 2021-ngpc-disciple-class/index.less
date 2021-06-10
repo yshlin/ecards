@@ -4,6 +4,44 @@ body {
   background-position: center;
 }
 
+.gift-size {
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+
+.card-size {
+  width: 480px;
+  height: 480px;
+  margin-top: -240px;
+  margin-left: -240px;
+}
+
+.gift.top-layer {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;;
+  .gift-size;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    transition: opacity .1s .7s;
+  }
+
+  .card {
+    .card-size;
+    width: 480px;
+    height: 480px;
+    opacity: 1;
+    z-index: 1000;
+  }
+}
+
 #thankyou {
   display: block;
   position: absolute;
@@ -12,6 +50,7 @@ body {
   margin-top: -100px;
   margin-left: -150px;
   cursor: pointer;
+  transition: all .5s .2s;
 }
 
 .clicked {
@@ -22,19 +61,13 @@ body {
 .gift {
   display: block;
   position: absolute;
-  margin-top: -100px;
-  margin-left: -100px;
-  width: 200px;
-  height: 200px;
+  .gift-size;
   z-index: 0;
 }
 
 .card-open {
   opacity: 1;
-  width: 480px;
-  height: 480px;
-  margin-top: -240px;
-  margin-left: -240px;
+  .card-size;
   transition: all .5s .2s;
 }
 
@@ -84,7 +117,7 @@ body {
   opacity: 0;
   margin-top: 0;
   margin-left: 0;
-  transition: all .5s 0s;
+  transition: all .5s .1s;
   pointer-events: none;
   background-repeat: no-repeat;
   background-position: center;
@@ -100,7 +133,7 @@ body {
   height: 200px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all .3s .4s;
+  transition: all .3s .5s;
   pointer-events: none;
   z-index: 0;
   opacity: .8;
@@ -115,7 +148,7 @@ body {
   height: 200px;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all .3s .4s;
+  transition: all .3s .5s;
   pointer-events: none;
   z-index: 0;
   opacity: .8;
@@ -356,33 +389,79 @@ body {
     left: 50%;
   }
 
-  .card-open {
+  .card-size {
     width: 300px;
     height: 300px;
     margin-top: -150px;
     margin-left: -150px;
   }
+
+  .gift.top-layer {
+    position: fixed;
+    .card {
+      .card-size;
+    }
+    &.show {
+      opacity: 1;
+      transition: opacity .5s 0s;
+    }
+  }
+
+  .openr .card {
+    opacity: 0;
+    .card-size;
+  }
+
+  .openl .card {
+    opacity: 0;
+    .card-size;
+  }
 }
 
 @media only screen and (min-width: 2000px) {
-  .card-open {
+  .gift-size {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+  }
+
+  .card-size {
     width: 960px;
     height: 960px;
     margin-top: -480px;
     margin-left: -480px;
   }
+
+  .gift.top-layer {
+    .gift-size;
+
+    .card {
+      .card-size;
+      margin-top: -380px;
+      margin-left: -380px;
+    }
+  }
+
+  .openr .card {
+    .card-size;
+  }
+
+  .openl .card {
+    .card-size;
+  }
+
   .gift {
-    margin-top: -200px;
-    margin-left: -200px;
-    width: 400px;
-    height: 400px;
+    .gift-size;
   }
+
   .tp {
-    width: 400px;
-    height: 400px;
+    .gift-size;
+    margin: auto;
   }
+
   .bt {
-    width: 400px;
-    height: 400px;
+    .gift-size;
+    margin: auto;
   }
 }
