@@ -8,14 +8,14 @@ $(() => {
     }).on('animationend', e => {
         $(e.target).removeClass('clicked');
     });
-    let o = $ty.offset();
     let $gifts = $('.gift');
     $gifts.on('mouseenter', e => {
         let $gift = $(e.target);
-        let o2 = $gift.offset();
         $gift.addClass('open' + (Math.floor(Math.random() * 2) === 1 ? 'r' : 'l'));
         let mq = window.matchMedia("(max-width: 768px)");
         if (!mq.matches) {
+            let o = $ty.offset();
+            let o2 = $gift.offset();
             $gift.find('.card').attr('style', `top: ${o.top - o2.top + 100}px; left: ${o.left - o2.left + 150}px;`);
         }
         whoosh.play();
