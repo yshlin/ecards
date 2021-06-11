@@ -15,7 +15,7 @@ $(() => {
     $gifts.on('mouseenter', e => {
         let $gift = $(e.target);
         $gift.addClass('open' + (Math.floor(Math.random() * 2) === 1 ? 'r' : 'l'));
-        let mq = window.matchMedia("(max-width: 1024px)");
+        let mq = window.matchMedia("(max-width: 1280px)");
         if (!mq.matches) {
             let o = $ty.offset();
             let o2 = $gift.offset();
