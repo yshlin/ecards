@@ -34,5 +34,5 @@ $(() => {
         $topLayer.removeClass('show');
         $topLayer.removeClass(giftClass);
     });
-
+    $('body').removeClass('loading');
 });
