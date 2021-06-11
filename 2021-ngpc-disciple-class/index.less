@@ -22,7 +22,7 @@ body {
   display: block;
   position: absolute;
   top: 50%;
-  left: 50%;;
+  left: 50%;
   .gift-size;
   opacity: 0;
   z-index: 1000;
@@ -46,13 +46,23 @@ body {
   display: block;
   position: absolute;
   top: 50%;
-  left: 50%;;
+  left: 50%;
   margin-top: -100px;
   margin-left: -150px;
   cursor: pointer;
   transition: all .5s .2s;
 }
 
+.mainSVG {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  height: 240px;
+  margin-top: -120px;
+  margin-left: -180px;
+}
 .clicked {
   animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0) rotate(0deg);
@@ -140,18 +150,7 @@ body {
 }
 
 .bt {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: all .3s .5s;
-  pointer-events: none;
-  z-index: 0;
-  opacity: .8;
+  .tp;
 }
 
 .gift01 {
@@ -376,7 +375,12 @@ body {
   #thankyou {
     position: relative;
     top: auto;
-    margin-top: 0px;
+    margin-top: 0;
+  }
+
+  .mainSVG {
+    #thankyou;
+    position: absolute;
   }
 
   .gift {
@@ -419,6 +423,15 @@ body {
 }
 
 @media only screen and (min-width: 2048px) {
+  #thankyou {
+    width: 600px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -300px;
+  }
+  .mainSVG {
+    transform: scale(2.0);
+  }
   .gift-size {
     width: 400px;
     height: 400px;

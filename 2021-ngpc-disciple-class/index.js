@@ -7,6 +7,7 @@ $(() => {
     $ty.on('click', e => {
         $(e.target).addClass('clicked');
         $gifts.addClass('clicked');
+        sparkle();
         bell.play();
     }).on('animationend', e => {
         $(e.target).removeClass('clicked');
