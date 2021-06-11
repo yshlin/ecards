@@ -87,11 +87,11 @@ function playParticle(p, min = 1.2, max = 3.6) {
     let tl = gsap.timeline();
     tl.to(p, {
         duration: gsap.utils.random(min, max),
-        physics2D: {
-            velocity: gsap.utils.random(-23, 23),
-            angle: gsap.utils.random(-180, 180),
-            gravity: gsap.utils.random(-6, 50)
-        },
+        // physics2D: {
+        //     velocity: gsap.utils.random(-23, 23),
+        //     angle: gsap.utils.random(-180, 180),
+        //     gravity: gsap.utils.random(-6, 50)
+        // },
         scale: 0,
         rotation: gsap.utils.random(-123, 360),
         ease: 'power1',
