@@ -1,4 +1,3 @@
-
 // MorphSVGPlugin.convertToPath('polygon');
 let xmlns = "http://www.w3.org/2000/svg",
     xlinkns = "http://www.w3.org/1999/xlink",
@@ -7,7 +6,19 @@ let xmlns = "http://www.w3.org/2000/svg",
     },
     mainSVG = select('.mainSVG'),
     showParticle = true,
-    particleColorArray = ['#E8F6F8', '#ACE8F8', '#F6FBFE', '#A2CBDC', '#B74551', '#5DBA72', '#910B28', '#910B28', '#446D39'],
+    particleColorArray = [
+        '#ffe900',
+        '#fcc70e',
+        '#E8F6F8',
+        '#F6FBFE',
+        '#ACE8F8',
+        '#A2CBDC',
+        '#B74551',
+        '#910B28',
+        '#910B28',
+        '#5DBA72',
+        '#446D39',
+    ],
     particleTypeArray = ['#star', '#circ', '#cross', '#heart'],
     particlePool = [],
     particleCount = 0,
@@ -53,15 +64,15 @@ let getScale = gsap.utils.random(0.5, 3, 0.001, true);
 let getOffset = () => {
     // let b = mainSVG.getBBox();
     let b = mainSVG.getBoundingClientRect();
-    let w = b.width;
-    let h = b.height;
+    let w = b.width - 20;
+    let h = b.height - 20;
     return {
-        x: Math.floor(Math.random() * w),
-        y: Math.floor(Math.random() * h),
+        x: Math.floor(Math.random() * w) + 10,
+        y: Math.floor(Math.random() * h) + 10,
     }
 };
 
-function playParticle(p, min=1.2, max=3.6) {
+function playParticle(p, min = 1.2, max = 3.6) {
     if (!showParticle) {
         return;
     }
