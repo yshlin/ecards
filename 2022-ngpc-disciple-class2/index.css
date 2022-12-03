@@ -1,0 +1,577 @@
+body {
+  background-image: url('img/craft-texture-brown-journal-note.jpg');
+  background-repeat: repeat;
+  background-position: center;
+}
+body.loading .loading-mask {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+body .loading-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.gift-size {
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+.card-size {
+  width: 480px;
+  height: 480px;
+  margin-top: -240px;
+  margin-left: -240px;
+}
+.gift.top-layer {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+.gift.top-layer.show {
+  opacity: 1;
+  transition: opacity 0.1s 0.7s;
+}
+.gift.top-layer .card {
+  margin-top: -240px;
+  margin-left: -240px;
+  width: 480px;
+  height: 480px;
+  opacity: 1;
+  z-index: 1000;
+}
+#thankyou {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  cursor: pointer;
+  transition: all 0.5s 0.2s;
+}
+.mainSVG {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 360px;
+  height: 240px;
+  margin-top: -120px;
+  margin-left: -180px;
+}
+.clicked {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+}
+.gift {
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  z-index: 0;
+}
+.card-open {
+  opacity: 1;
+  width: 480px;
+  height: 480px;
+  margin-top: -240px;
+  margin-left: -240px;
+  transition: all 0.5s 0.2s;
+}
+.openr > .tp {
+  transform: translateY(-30px) rotate(15deg);
+  opacity: 0.5;
+  transition: all 0.3s 0s;
+}
+.openr > .bt {
+  transform: translateY(30px) rotate(-15deg);
+  opacity: 0.5;
+  transition: all 0.3s 0s;
+}
+.openr > .card {
+  opacity: 1;
+  width: 480px;
+  height: 480px;
+  margin-top: -240px;
+  margin-left: -240px;
+  transition: all 0.5s 0.2s;
+}
+.openl > .tp {
+  transform: translateY(-30px) rotate(-15deg);
+  opacity: 0.5;
+  transition: all 0.3s 0s;
+}
+.openl > .bt {
+  transform: translateY(30px) rotate(15deg);
+  opacity: 0.5;
+  transition: all 0.3s 0s;
+}
+.openl > .card {
+  opacity: 1;
+  width: 480px;
+  height: 480px;
+  margin-top: -240px;
+  margin-left: -240px;
+  transition: all 0.5s 0.2s;
+}
+.card {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-left: 0;
+  transition: all 0.5s 0.1s;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+}
+.tp {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s 0.5s;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+.bt {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s 0.5s;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+.gift01 {
+  top: 30%;
+  left: 25%;
+}
+.gift01 .card {
+  background-image: url("img/cards/02.png");
+  background-size: 100% auto;
+}
+.gift01 .tp {
+  background-image: url("img/giftboxes/giftbox01-top.png");
+  background-size: auto 100%;
+}
+.gift01 .bt {
+  background-image: url("img/giftboxes/giftbox01-bottom.png");
+  background-size: auto 100%;
+}
+.gift02 {
+  top: 15%;
+  left: 40%;
+}
+.gift02 .card {
+  background-image: url("img/cards/03.png");
+  background-size: 100% auto;
+}
+.gift02 .tp {
+  background-image: url("img/giftboxes/giftbox02-top.png");
+  background-size: auto 100%;
+}
+.gift02 .bt {
+  background-image: url("img/giftboxes/giftbox02-bottom.png");
+  background-size: auto 100%;
+}
+.gift03 {
+  top: 15%;
+  left: 60%;
+}
+.gift03 .card {
+  background-image: url("img/cards/04.png");
+  background-size: 100% auto;
+}
+.gift03 .tp {
+  background-image: url("img/giftboxes/giftbox03-top.png");
+  background-size: 100% auto;
+}
+.gift03 .bt {
+  background-image: url("img/giftboxes/giftbox03-bottom.png");
+  background-size: 100% auto;
+}
+.gift04 {
+  top: 30%;
+  left: 75%;
+}
+.gift04 .card {
+  background-image: url("img/cards/05.png");
+  background-size: 100% auto;
+}
+.gift04 .tp {
+  background-image: url("img/giftboxes/giftbox04-top.png");
+  background-size: 100% auto;
+}
+.gift04 .bt {
+  background-image: url("img/giftboxes/giftbox04-bottom.png");
+  background-size: 100% auto;
+}
+.gift05 {
+  top: 50%;
+  left: 80%;
+}
+.gift05 .card {
+  background-image: url("img/cards/01.png");
+  background-size: 100% auto;
+}
+.gift05 .tp {
+  background-image: url("img/giftboxes/giftbox05-top.png");
+  background-size: auto 100%;
+}
+.gift05 .bt {
+  background-image: url("img/giftboxes/giftbox05-bottom.png");
+  background-size: auto 100%;
+}
+.gift06 {
+  top: 70%;
+  left: 75%;
+}
+.gift06 .card {
+  background-image: url("img/cards/06.png");
+  background-size: 100% auto;
+}
+.gift06 .tp {
+  background-image: url("img/giftboxes/giftbox06-top.png");
+  background-size: auto 100%;
+}
+.gift06 .bt {
+  background-image: url("img/giftboxes/giftbox06-bottom.png");
+  background-size: auto 100%;
+}
+.gift07 {
+  top: 85%;
+  left: 60%;
+}
+.gift07 .card {
+  background-image: url("img/cards/07.png");
+  background-size: 100% auto;
+}
+.gift07 .tp {
+  background-image: url("img/giftboxes/giftbox07-top.png");
+  background-size: auto 100%;
+}
+.gift07 .bt {
+  background-image: url("img/giftboxes/giftbox07-bottom.png");
+  background-size: auto 100%;
+}
+.gift08 {
+  top: 85%;
+  left: 40%;
+}
+.gift08 .card {
+  background-image: url("img/cards/08.png");
+  background-size: 100% auto;
+}
+.gift08 .tp {
+  background-image: url("img/giftboxes/giftbox08-top.png");
+  background-size: auto 100%;
+}
+.gift08 .bt {
+  background-image: url("img/giftboxes/giftbox08-bottom.png");
+  background-size: auto 100%;
+}
+.gift09 {
+  top: 70%;
+  left: 25%;
+}
+.gift09 .card {
+  background-image: url("img/cards/09.png");
+  background-size: 100% auto;
+}
+.gift09 .tp {
+  background-image: url("img/giftboxes/giftbox09-top.png");
+  background-size: auto 100%;
+}
+.gift09 .bt {
+  background-image: url("img/giftboxes/giftbox09-bottom.png");
+  background-size: auto 100%;
+}
+.gift10 {
+  top: 50%;
+  left: 20%;
+}
+.gift10 .card {
+  background-image: url("img/cards/01.png");
+  background-size: 100% auto;
+}
+.gift10 .tp {
+  background-image: url("img/giftboxes/giftbox10-top.png");
+  background-size: auto 100%;
+}
+.gift10 .bt {
+  background-image: url("img/giftboxes/giftbox10-bottom.png");
+  background-size: auto 100%;
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(10deg);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0) rotate(5deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0) rotate(-5deg);
+  }
+}
+.lds-roller {
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  left: 50%;
+  top: 40%;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 1024px) {
+  #thankyou {
+    position: relative;
+    top: auto;
+    margin-top: 0;
+  }
+  .mainSVG {
+    position: relative;
+    top: auto;
+    margin-top: 0;
+    position: absolute;
+  }
+  .gift {
+    position: relative;
+    margin-top: 0;
+  }
+  .gift01,
+  .gift02,
+  .gift03,
+  .gift04,
+  .gift05,
+  .gift06,
+  .gift07,
+  .gift08,
+  .gift09,
+  .gift10 {
+    top: auto;
+    left: 50%;
+  }
+  .card-size {
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+  }
+  .gift.top-layer {
+    position: fixed;
+  }
+  .gift.top-layer .card {
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+  }
+  .gift.top-layer.show {
+    opacity: 1;
+    transition: opacity 0.5s 0s;
+  }
+  .openr .card {
+    opacity: 0;
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+  }
+  .openl .card {
+    opacity: 0;
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+  }
+}
+@media only screen and (min-width: 2048px) {
+  #thankyou {
+    width: 600px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -300px;
+  }
+  .mainSVG {
+    transform: scale(2);
+  }
+  .gift-size {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+  }
+  .card-size {
+    width: 960px;
+    height: 960px;
+    margin-top: -380px;
+    margin-left: -320px;
+  }
+  .gift.top-layer {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+  }
+  .gift.top-layer .card {
+    width: 960px;
+    height: 960px;
+    margin-top: -380px;
+    margin-left: -320px;
+    margin-left: -370px;
+  }
+  .openr .card {
+    width: 960px;
+    height: 960px;
+    margin-top: -380px;
+    margin-left: -320px;
+  }
+  .openl .card {
+    width: 960px;
+    height: 960px;
+    margin-top: -380px;
+    margin-left: -320px;
+  }
+  .gift {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+  }
+  .tp {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    margin: auto;
+  }
+  .bt {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=index.css.map */
